@@ -10,42 +10,42 @@ Array.from(gs).forEach(g => {
 });
 
 const symbols = {
-  A: [2, 3, 4, 5, 8, 9],
+  A: [5, 6, 10, 11, 15, 16, 17, 21, 24, 29, 30, 31, 38, 39, 47, 48],
   B: [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
     10,
-    11,
-    12,
     13,
     14,
-    15,
-    16,
     17,
     20,
-    23,
+    21,
     24,
     27,
-    30,
+    28,
     31,
     34,
+    35,
     37,
-    38,
+    39,
     41,
-    44,
-    45,
-    47,
-    49,
-    51,
-    53,
-    57
+    43,
+    47
   ]
 };
 
-const str = ["B"];
+const str = ["A", "B"];
 
 const blank = "rgb(255,255,255)";
 const bright = "#196127";
 const ret_length = rects.length;
-console.log(rects[0])
+console.log(rects[0]);
 
 for (let i = 0; i < ret_length; i++) {
   const item = str[Math.floor(i / 49)];
@@ -58,10 +58,4 @@ for (let i = 0; i < ret_length; i++) {
   console.log("i:", i);
   if (symbols[item].indexOf(pos) !== -1) rects[i].setAttribute("fill", bright);
   else rects[i].setAttribute("fill", blank);
-  // console.log("item:", item);
 }
-
-// rects.forEach((r, i) => {
-//   if (symbols.A.indexOf(i + 1) !== -1) r.setAttribute("fill", bright);
-//   else r.setAttribute("fill", blank);
-// });

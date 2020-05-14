@@ -14,21 +14,19 @@ counter = 0
 # # counter += symbol_height * (width - symbol_width)
 
 counter += height * int((width - symbol_width) / 2)
-print("counter:", counter)
 for filename in glob.glob("symbols/*"):
+    counter = 0
     with open(filename) as f:
         data = f.read()
         parsed = filter(lambda x: len(x) > 0, data.split("\n"))
         parsed = [list(x) for x in parsed]
         parsed = [*zip(*parsed)]
-        print("parsed:", parsed)
         for p in parsed:
             counter += int((height - symbol_height) / 2)
-            print("counter:", counter)
             for i in p:
-                counter += 1
                 if i == "1":
                     values.append(counter)
+                counter += 1
             counter += int((height - symbol_height) / 2)
         rep[os.path.basename(filename)] = values
         values = []
