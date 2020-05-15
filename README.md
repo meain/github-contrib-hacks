@@ -2,7 +2,7 @@
 
 ## How to
 
-Copy paste the `index.js` file into the console.
+Copy paste the `index.js` file into your browser console on a Github profile page.
 
 ## List
 
